@@ -10,6 +10,7 @@
     "@wdio/spec-reporter": "^8.15.10"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "wdio run ./wdio.conf.js",
+    "suite": "npx wdio run ./wdio.conf.js --suite login"
   }
 }
