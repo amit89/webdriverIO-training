@@ -11,6 +11,6 @@
   },
   "scripts": {
     "wdio": "wdio run ./wdio.conf.js",
-    "suite": "npx wdio run ./wdio.conf.js --suite login"
+    "suite": "npx wdio run ./wdio.dev.conf.js --suite login"
   }
 }

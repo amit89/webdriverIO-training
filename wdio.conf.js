@@ -116,7 +116,19 @@ export const config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
-  reporters: ["spec", "dot", ["allure", { outputDir: "allure-results" }]],
+  reporters: [
+    "spec",
+    "dot",
+    [
+      "allure",
+      {
+        outputDir: "allure-results",
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+        addConsoleLogs: true,
+      },
+    ],
+  ],
 
   //
   // Options to be passed to Mocha.
@@ -233,8 +245,9 @@ export const config = {
    * Hook that gets executed after the suite has ended
    * @param {object} suite suite details
    */
-  // afterSuite: function (suite) {
-  // },
+  afterSuite: function (suite) {
+    browser.close();
+  },
   /**
    * Runs after a WebdriverIO command gets executed
    * @param {string} commandName hook command name
