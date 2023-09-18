@@ -13,7 +13,6 @@ class CheckBoxPage extends BasePage {
 
   async selectSingleCheckbox() {
     const ageSelected = await this.singleCheckBoc.isSelected();
-    // console.log(ageSelected);
     if (!ageSelected) {
       await this.singleCheckBoc.click();
     } else console.log("Checkbox is selected");
